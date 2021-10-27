@@ -1,21 +1,17 @@
-const { Router } = require("express");
-// Importar todos los routers;
+//router es solo para derivar rutas 
 
-
+const express = require('express')
+const server = express();
 const {
  getAllPokemon, 
  getSomePokemon
 } = require("../routes/controllers/pokemoncontrol.js");
 
 
-//importo los controladores 
-const axios = require("axios");
-
-const router = Router();
 
 //en index  ya dice pokemon , es una continuacion 
 
- router.get("/all", getAllPokemon);
+ server.get("/all", getAllPokemon);
 
 // router.get("/", getSomePokemon);_ funcion con el query y some pokemon (el query no se define en la ruta , destructuring )
 
@@ -23,7 +19,7 @@ const router = Router();
 
 // router.post("/", createPokemon);//body 
 
-module.exports = router;
+module.exports = server;
 
 
 

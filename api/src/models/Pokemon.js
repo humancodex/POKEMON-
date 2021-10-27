@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       },
       vida: {
         type: DataTypes.INTEGER,
-        
+       
       },
       fuerza: {
         type: DataTypes.INTEGER,
@@ -26,20 +26,25 @@ module.exports = (sequelize) => {
       },
       defensa: {
         type: DataTypes.INTEGER,
-       
+        
       },
       velocidad: {
         type: DataTypes.INTEGER,
-        
+       
       },
       altura: {
         type: DataTypes.INTEGER,
-     
+        
       },
       peso: {
         type: DataTypes.INTEGER,
         
       },
+      createdInBd:{//me sirve para hacer un llamado solamente a lo que esta en base de datos 
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      }
     },
     {
       timestamps: false,
