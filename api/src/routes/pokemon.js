@@ -1,26 +1,34 @@
-//router es solo para derivar rutas 
+//router es solo para derivar rutas
 
-const express = require('express')
+const express = require("express");
 const server = express();
+
 const {
- getAllPokemon, 
- getSomePokemon
+  getAllPokemon,
+  findPokeName,
+  postPoke,
+  findPokeById,
 } = require("../routes/controllers/pokemoncontrol.js");
 
+//esto es: /pokemons...
 
 
-//en index  ya dice pokemon , es una continuacion 
 
- server.get("/all", getAllPokemon);
 
-// router.get("/", getSomePokemon);_ funcion con el query y some pokemon (el query no se define en la ruta , destructuring )
+server.get("/all", getAllPokemon);
 
-// router.get("/:idPokemon", getOnePokemon);//params 
+server.get("/", findPokeName);
 
-// router.post("/", createPokemon);//body 
+
+// //ruta para pedir un pokemon específico por ID (params), 
+server.get('/:id', findPokeById)//params
+
+
+// //ruta para postear pokemon en db, 
+server.post('/', postPoke)//body 
+
+
 
 module.exports = server;
-
-
 
 //analiza como te viene la informacion

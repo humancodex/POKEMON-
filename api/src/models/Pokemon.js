@@ -12,39 +12,41 @@ module.exports = (sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      nombre: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      vida: {
+      hp: {//vida 
         type: DataTypes.INTEGER,
-       
       },
-      fuerza: {
+      attack: {
         type: DataTypes.INTEGER,
-       
       },
-      defensa: {
+      defense: {
         type: DataTypes.INTEGER,
-        
       },
-      velocidad: {
+      speed: {
         type: DataTypes.INTEGER,
-       
       },
-      altura: {
+      height: {//altura
         type: DataTypes.INTEGER,
-        
       },
-      peso: {
+      weight: {//peso
         type: DataTypes.INTEGER,
-        
       },
-      createdInBd:{//me sirve para hacer un llamado solamente a lo que esta en base de datos 
+      img: {//donde conseguir buenas imagenes
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      // gif: {//buenos gifs?
+      //   type: DataTypes.TEXT,
+      // },
+      createdInBd: {
+        //me sirve para hacer un llamado solamente a lo que esta en base de datos
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
-      }
+      },
     },
     {
       timestamps: false,
@@ -52,15 +54,3 @@ module.exports = (sequelize) => {
   );
 };
 
-/* [ ] Pokemon con las siguientes propiedades:
-ID (Número de Pokemon) * : No puede ser un ID de un pokemon ya existente en la API pokeapi
-Nombre *
-Vida
-Fuerza
-Defensa
-Velocidad
-Altura
-Peso
-[ ] Tipo con las siguientes propiedades:
-ID
-Nombre */

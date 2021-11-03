@@ -4,13 +4,15 @@ const server = express();
 
 
 
-// const {
+const {
+getTypes,
+} = require("../routes/controllers/pokemoncontrol.js");
 
-// } = require("../models");
 
 
+//esto es types/
+server.get('/', getTypes)
 
-//server.get("/", getTypes);
 
 
 
