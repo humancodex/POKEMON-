@@ -15,7 +15,7 @@ const {
 
 
 
-server.get("/all", getAllPokemon);
+server.get("/", getAllPokemon);//esto es pokemons all
 
 server.get("/", findPokeName);
 
